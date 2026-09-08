@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- Экран сайта МЭШ / Моя школа -->
+    <WebView
+        android:id="@+id/webViewMesh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Встроенная Админка (скрыта по умолчанию) -->
+    <WebView
+        android:id="@+id/webViewAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <!-- Кнопка перехода в Админку -->
+    <Button
+        android:id="@+id/btnToggleAdmin"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="14dp"
+        android:background="#40141416"
+        android:text="⚙"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <!-- Панель управления сдачей -->
+    <LinearLayout
+        android:id="@+id/panelMeshControl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="14dp"
+        android:background="#E6121214"
+        android:elevation="10dp"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Таймер прохождения:"
+                android:textColor="#8E8E93"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvTimerDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10 мин"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/sbTimer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
+            android:max="30"
+            android:progress="10" />
+
+        <Button
+            android:id="@+id/btnInjectAnswers"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:backgroundTint="#FFFFFF"
+            android:text="Применить ответы из базы"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvMeshStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:text="Войдите и откройте ЦДЗ в МЭШ..."
+            android:textColor="#8E8E93"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+</RelativeLayout>
